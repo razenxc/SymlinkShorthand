@@ -47,7 +47,7 @@ namespace SymblinkShorthand
                 
             } catch (Exception e)
             {
-                xamlStatus.Text = e.Message;
+                StatusUpdate(e.Message);
             }
             
         }
@@ -64,11 +64,13 @@ namespace SymblinkShorthand
                     AllowMultiple = false
                 });
                 xamlTargetDestPath.Text = Uri.UnescapeDataString(files[0].Path.AbsolutePath);
+                xamlTargetIsDir.IsEnabled = false;
+                xamlTargetIsFile.IsEnabled = false;
 
             }
             catch (Exception e)
             {
-                xamlStatus.Text = e.Message;
+                StatusUpdate(e.Message);
             }
 
         }
@@ -77,31 +79,54 @@ namespace SymblinkShorthand
         {
             try
             {
-                if (xamlTargetDestName.Text != "")
+                if (xamlTargetIsDir.IsChecked.Value || xamlTargetIsFile.IsChecked.Value)
                 {
-                    if (Directory.Exists(xamlTargetPath.Text))
+                    if (xamlTargetDestName.Text != "")
                     {
-                        Directory.CreateSymbolicLink(xamlTargetDestPath.Text + xamlTargetDestName.Text, xamlTargetPath.Text);
-                    }
-                    else if (File.Exists(xamlTargetPath.Text))
-                    {
-                        File.CreateSymbolicLink(xamlTargetDestPath.Text + xamlTargetDestName.Text, xamlTargetPath.Text);
+                        if (Directory.Exists(xamlTargetPath.Text))
+                        {
+                            Directory.CreateSymbolicLink(xamlTargetDestPath.Text + xamlTargetDestName.Text, xamlTargetPath.Text);
+                        }
+                        else if (File.Exists(xamlTargetPath.Text))
+                        {
+                            File.CreateSymbolicLink(xamlTargetDestPath.Text + xamlTargetDestName.Text, xamlTargetPath.Text);
+                        }
+                        else
+                        {
+                            StatusUpdate("Target path does not exist");
+                        }
+                        xamlTargetIsDir.IsEnabled = true;
+                        xamlTargetIsFile.IsEnabled = true;
                     }
                     else
                     {
-                        xamlStatus.Text = "Target path does not exist";
+                        StatusUpdate("The destination name is required");
                     }
-                    xamlTargetIsDir.IsEnabled = true;
-                    xamlTargetIsFile.IsEnabled = true;
                 }
                 else
                 {
-                    xamlStatus.Text = "The destination name is required";
+                    StatusUpdate("Symbolic link type required");
                 }
                 
-            } catch (Exception e) { 
-                xamlStatus.Text = e.Message;
+            } catch (Exception e) {
+                StatusUpdate(e.Message);
             }
         }
+
+        private void xamlClearAll_Clicked(object sender, RoutedEventArgs args)
+        {
+            xamlTargetPath.Clear();
+            xamlTargetDestPath.Clear();
+            xamlTargetDestName.Clear();
+            xamlTargetIsDir.IsEnabled = true;
+            xamlTargetIsFile.IsEnabled = true;
+        }
+
+        private void StatusUpdate(string message)
+        {
+            xamlStatus.Text = message;
+        }
     }
+
+   
 }

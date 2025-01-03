@@ -9,9 +9,32 @@ namespace SymblinkShorthand
 {
     public partial class MainWindow : Window
     {
+        public static string? argsTarget;
         public MainWindow()
+
         {
             InitializeComponent();
+
+            if (argsTarget != null)
+            {
+                xamlTargetPath.Text = argsTarget;
+                if (File.Exists(argsTarget))
+                {
+                    xamlTargetIsFile.IsChecked = true;
+                    xamlTargetIsDir.IsEnabled = false;
+                    xamlTargetIsFile.IsEnabled = false;
+                }
+                else if(Directory.Exists(argsTarget))
+                {
+                    xamlTargetIsDir.IsChecked = true;
+                    xamlTargetIsDir.IsEnabled = false;
+                    xamlTargetIsFile.IsEnabled = false;
+                }
+                else
+                {
+                    StatusUpdate("Wrong arguments");
+                }
+            }
         }
 
         private async void xamlPickTargetPath_Clicked(object sender, RoutedEventArgs args)
@@ -49,7 +72,6 @@ namespace SymblinkShorthand
             {
                 StatusUpdate(e.Message);
             }
-            
         }
 
         private async void xamlPickDestPath_Clicked(object sender, RoutedEventArgs args)
@@ -66,13 +88,11 @@ namespace SymblinkShorthand
                 xamlTargetDestPath.Text = Uri.UnescapeDataString(files[0].Path.AbsolutePath);
                 xamlTargetIsDir.IsEnabled = false;
                 xamlTargetIsFile.IsEnabled = false;
-
             }
             catch (Exception e)
             {
                 StatusUpdate(e.Message);
             }
-
         }
 
         private void xamlLinkTargets_Clicked(object sender, RoutedEventArgs args)
@@ -127,6 +147,4 @@ namespace SymblinkShorthand
             xamlStatus.Text = message;
         }
     }
-
-   
 }

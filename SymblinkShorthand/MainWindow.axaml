@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+		d:DesignWidth="630" d:DesignHeight="300"
+		Width="630" Height="300"
+		MinWidth="630" MinHeight="300"
+		MaxHeight="300"
+        x:Class="SymblinkShorthand.MainWindow"
+        Title="SymblinkShorthand">
+	<Panel Margin="20">
+		<StackPanel>
+
+			<Label Margin="0 0 0 5"
+				   Content="Symblink type"/>
+			<DockPanel>
+				<RadioButton Margin="0 0 50 0"
+					x:Name="xamlTargetIsDir" GroupName="Target Type" Content="Dir"/>
+				<RadioButton x:Name="xamlTargetIsFile" GroupName="Target Type" Content="File"/>
+			</DockPanel>
+
+			<Label Margin="0 0 0 5" 
+					   Content="Target Path"/>
+			
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				
+				<TextBox Grid.Column="0"
+					Watermark="F:/DriveData/Minecraft/saves" Text="" x:Name="xamlTargetPath"/>
+				<Button Grid.Column="1" Margin="10 0 0 0"
+						Click="xamlPickTargetPath_Clicked" Content="Select"/>
+			</Grid>
+
+
+			<DockPanel Margin="0 10 0 5">
+				<Label
+					   Content="Target Destination"/>
+				<Label HorizontalAlignment="Right" Margin="0 0 70 0"
+					   Content="Destination Name"/>
+			</DockPanel>
+
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="0.6*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+
+				<TextBox Grid.Column="0"
+						 Watermark="C:/Users/Admin/AppData/Roaming/.minecraft" Text="" x:Name="xamlTargetDestPath"/>
+				<TextBox Grid.Column="1" Margin=" 5 0"
+						 Watermark="saves" Text="" x:Name="xamlTargetDestName"/>
+				<Button Grid.Column="2" Margin="10 0 0 0"
+						Click="xamlPickDestPath_Clicked" Content="Select"/>
+			</Grid>
+
+			<Grid Margin="0 20 0 0">
+				<Button HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center"
+						Content="Link" Click="xamlLinkTargets_Clicked"
+						/>
+			</Grid>
+
+			<StackPanel Margin="0 6">
+				<TextBlock x:Name="xamlStatus"/>
+			</StackPanel>
+
+		</StackPanel>
+	</Panel>
+</Window>

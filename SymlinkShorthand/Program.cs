@@ -1,7 +1,7 @@
 ﻿using System;
 using Avalonia;
 
-namespace SymblinkShorthand
+namespace SymlinkShorthand
 {
     internal class Program
     {
@@ -16,7 +16,7 @@ namespace SymblinkShorthand
             // Args handling
             if (args.Length > 0)
             {
-                SymblinkShorthand.MainWindow.argsTarget = args[0];
+                SymlinkShorthand.MainWindow.argsTarget = args[0];
             }
 
             app.StartWithClassicDesktopLifetime(args);

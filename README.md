@@ -1,1 +1,1 @@
-# SymblinkShorthand
+# SymlinkShorthand

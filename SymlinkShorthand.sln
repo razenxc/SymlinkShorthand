@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymblinkShorthand", "SymblinkShorthand\SymblinkShorthand.csproj", "{BC2725E6-C337-4986-8B04-01CFB0E20783}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymlinkShorthand", "SymlinkShorthand\SymlinkShorthand.csproj", "{BC2725E6-C337-4986-8B04-01CFB0E20783}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{2B239DE3-E598-4317-9DEA-842CAFFE065F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{BC2725E6-C337-4986-8B04-01CFB0E20783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC2725E6-C337-4986-8B04-01CFB0E20783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC2725E6-C337-4986-8B04-01CFB0E20783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B239DE3-E598-4317-9DEA-842CAFFE065F}.Debug|Any CPU.ActiveCfg = Debug
+		{2B239DE3-E598-4317-9DEA-842CAFFE065F}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 
-namespace SymblinkShorthand
+namespace SymlinkShorthand
 {
     public partial class MainWindow : Window
     {
@@ -106,10 +106,12 @@ namespace SymblinkShorthand
                         if (Directory.Exists(xamlTargetPath.Text))
                         {
                             Directory.CreateSymbolicLink(xamlTargetDestPath.Text + xamlTargetDestName.Text, xamlTargetPath.Text);
+                            StatusUpdate("Symlink successfully created");
                         }
                         else if (File.Exists(xamlTargetPath.Text))
                         {
                             File.CreateSymbolicLink(xamlTargetDestPath.Text + xamlTargetDestName.Text, xamlTargetPath.Text);
+                            StatusUpdate("Symlink successfully created");
                         }
                         else
                         {

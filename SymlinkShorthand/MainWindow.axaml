@@ -8,9 +8,9 @@
 		MinWidth="630" MinHeight="300"
 		MaxHeight="300"
 		WindowStartupLocation="CenterScreen"
-        x:Class="SymblinkShorthand.MainWindow"
+        x:Class="SymlinkShorthand.MainWindow"
 		Icon="/Assets/icon.ico"
-        Title="SymblinkShorthand">
+        Title="SymlinkShorthand">
 	
 	<Panel Margin="20">
 		<StackPanel>

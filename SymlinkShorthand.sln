@@ -5,7 +5,7 @@ VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymlinkShorthand", "SymlinkShorthand\SymlinkShorthand.csproj", "{BC2725E6-C337-4986-8B04-01CFB0E20783}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{2B239DE3-E598-4317-9DEA-842CAFFE065F}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WindowsSetup", "WindowsSetup\WindowsSetup.vdproj", "{2B239DE3-E598-4317-9DEA-842CAFFE065F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

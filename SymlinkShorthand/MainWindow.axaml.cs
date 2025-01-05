@@ -55,6 +55,8 @@ namespace SymlinkShorthand
                     {
                         xamlTargetPath.Text = Uri.UnescapeDataString(files[0].Path.AbsolutePath);
                     }
+                    xamlTargetIsDir.IsEnabled = false;
+                    xamlTargetIsFile.IsEnabled = false;
                 }
                 else if (xamlTargetIsDir.IsChecked.Value)
                 {
@@ -67,6 +69,10 @@ namespace SymlinkShorthand
                     xamlTargetIsDir.IsEnabled = false;
                     xamlTargetIsFile.IsEnabled = false;
                 }
+                else
+                {
+                    StatusUpdate("You should select Symbolic Link type");
+                }
                 
             } catch (Exception e)
             {
@@ -78,16 +84,24 @@ namespace SymlinkShorthand
         {
             try
             {
-                TopLevel topLevel = TopLevel.GetTopLevel(this);
-
-                IReadOnlyList<IStorageFolder> files = await topLevel.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
+                if (xamlTargetIsDir.IsChecked.Value || xamlTargetIsFile.IsChecked.Value)
                 {
-                    Title = "Select target directory",
-                    AllowMultiple = false
-                });
-                xamlTargetDestPath.Text = Uri.UnescapeDataString(files[0].Path.AbsolutePath);
-                xamlTargetIsDir.IsEnabled = false;
-                xamlTargetIsFile.IsEnabled = false;
+                    TopLevel topLevel = TopLevel.GetTopLevel(this);
+
+                    IReadOnlyList<IStorageFolder> files = await topLevel.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
+                    {
+                        Title = "Select target directory",
+                        AllowMultiple = false
+                    });
+                    xamlTargetDestPath.Text = Uri.UnescapeDataString(files[0].Path.AbsolutePath);
+                    xamlTargetIsDir.IsEnabled = false;
+                    xamlTargetIsFile.IsEnabled = false;
+                }
+                else 
+                {
+                    StatusUpdate("You should select Symbolic Link type");
+                }
+                
             }
             catch (Exception e)
             {
@@ -101,8 +115,13 @@ namespace SymlinkShorthand
             {
                 if (xamlTargetIsDir.IsChecked.Value || xamlTargetIsFile.IsChecked.Value)
                 {
-                    if (xamlTargetDestName.Text != "")
+                    if (xamlTargetPath.Text != "" && xamlTargetDestName.Text != "")
                     {
+                        if (!xamlTargetDestPath.Text.EndsWith('/') || !xamlTargetDestPath.Text.EndsWith('\\'))
+                        {
+                            xamlTargetDestPath.Text += '/';
+                        }
+
                         if (Directory.Exists(xamlTargetPath.Text))
                         {
                             Directory.CreateSymbolicLink(xamlTargetDestPath.Text + xamlTargetDestName.Text, xamlTargetPath.Text);

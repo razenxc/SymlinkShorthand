@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_319AAABEB0E844F1AFFC25103C8BEC49"
+        "MsmKey" = "8:_2843962BA8DF4F83B2755C8C01EB3A7F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -33,19 +33,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7C4AE057DE93404AB951B1CF0B0D7EF2"
+        "MsmKey" = "8:_5678F6493F9840F9A6804EC6596C6CBB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B94C3D808F874B0A9A1F54561B56D490"
+        "MsmKey" = "8:_A31A51BE04B546E185F760E1411CECB8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D2E8ECC02926464FA2F824A564C63A0D"
+        "MsmKey" = "8:_A8700A7A458748F4BD49065C49372717"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -136,10 +136,10 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_319AAABEB0E844F1AFFC25103C8BEC49"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2843962BA8DF4F83B2755C8C01EB3A7F"
             {
-            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\libHarfBuzzSharp.dll"
-            "TargetName" = "8:libHarfBuzzSharp.dll"
+            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\libSkiaSharp.dll"
+            "TargetName" = "8:libSkiaSharp.dll"
             "Tag" = "8:"
             "Folder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
             "Condition" = "8:"
@@ -196,10 +196,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7C4AE057DE93404AB951B1CF0B0D7EF2"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5678F6493F9840F9A6804EC6596C6CBB"
             {
-            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\av_libglesv2.dll"
-            "TargetName" = "8:av_libglesv2.dll"
+            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\libHarfBuzzSharp.dll"
+            "TargetName" = "8:libHarfBuzzSharp.dll"
             "Tag" = "8:"
             "Folder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
             "Condition" = "8:"
@@ -216,7 +216,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B94C3D808F874B0A9A1F54561B56D490"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A31A51BE04B546E185F760E1411CECB8"
             {
             "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\SymlinkShorthand.exe"
             "TargetName" = "8:SymlinkShorthand.exe"
@@ -236,10 +236,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D2E8ECC02926464FA2F824A564C63A0D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A8700A7A458748F4BD49065C49372717"
             {
-            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\libSkiaSharp.dll"
-            "TargetName" = "8:libSkiaSharp.dll"
+            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\av_libglesv2.dll"
+            "TargetName" = "8:av_libglesv2.dll"
             "Tag" = "8:"
             "Folder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
             "Condition" = "8:"
@@ -324,15 +324,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SymlinkShorthand"
-        "ProductCode" = "8:{A50379B2-30FE-4A70-B1F5-F7BCB609C3D7}"
-        "PackageCode" = "8:{BE620BB7-2D5D-4E0A-9F48-2795A6F0F63D}"
+        "ProductCode" = "8:{EFB1FE9E-2236-45A9-BB07-4995BFB0A493}"
+        "PackageCode" = "8:{9B0A61D4-8C47-4B0D-AD16-CF467D40EBAF}"
         "UpgradeCode" = "8:{C2727E92-AFEF-44BB-95AB-57D5DB0CA7AA}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.1"
+        "ProductVersion" = "8:1.1.0"
         "Manufacturer" = "8: "
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -613,7 +613,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_B94C3D808F874B0A9A1F54561B56D490"
+            "Target" = "8:_A31A51BE04B546E185F760E1411CECB8"
             "Folder" = "8:_C13446D80D404F56B41AC583853A51E1"
             "WorkingFolder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
             "Icon" = "8:_367D9B3931F4493E951EC5584456322C"
@@ -627,7 +627,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_B94C3D808F874B0A9A1F54561B56D490"
+            "Target" = "8:_A31A51BE04B546E185F760E1411CECB8"
             "Folder" = "8:_F6D45F8E8EB9461AAF0223012A0B52C6"
             "WorkingFolder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
             "Icon" = "8:_367D9B3931F4493E951EC5584456322C"

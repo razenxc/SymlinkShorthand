@@ -16,7 +16,7 @@
 		<StackPanel>
 
 			<Label Margin="0 0 0 5"
-				   Content="Symblink type"/>
+				   Content="Symbolic Link type"/>
 			<DockPanel>
 				<RadioButton Margin="0 0 50 0"
 					x:Name="xamlTargetIsDir" GroupName="Target Type" Content="Dir"/>
@@ -62,7 +62,7 @@
 			<Grid Margin="0 20 0 0">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="*"/>
-					<ColumnDefinition Width="0.2*"/>
+					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
 				
 				<Button Grid.Column="0" 
@@ -71,7 +71,7 @@
 						/>
 				<Button Grid.Column="1" Margin="5 0 0 0"
 						HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center"
-						Content="Clear" Click="xamlClearAll_Clicked"
+						Content=" Clear " Click="xamlClearAll_Clicked"
 						/>
 			</Grid>
 

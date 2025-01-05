@@ -477,6 +477,14 @@
                                         }
                                         "Values"
                                         {
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_9BB9ED99D73F4831BFF21B3B9F972F07"
+                                            {
+                                            "Name" = "8:Icon"
+                                            "Condition" = "8:"
+                                            "Transitive" = "11:FALSE"
+                                            "ValueTypes" = "3:1"
+                                            "Value" = "8:\"[TARGETDIR]SymlinkShorthand.exe\""
+                                            }
                                             "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_AED10975E755499DAF90C34E73889CB5"
                                             {
                                             "Name" = "8:"
@@ -549,6 +557,14 @@
                                         }
                                         "Values"
                                         {
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_5A49B0B1FE4A4ECEAFB8989C64B66FCF"
+                                            {
+                                            "Name" = "8:Icon"
+                                            "Condition" = "8:"
+                                            "Transitive" = "11:FALSE"
+                                            "ValueTypes" = "3:1"
+                                            "Value" = "8:\"[TARGETDIR]SymlinkShorthand.exe\""
+                                            }
                                             "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_AF9A4F6CEC8E47B4BCDD32CA6F54FE08"
                                             {
                                             "Name" = "8:"

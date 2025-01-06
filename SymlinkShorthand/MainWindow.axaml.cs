@@ -11,7 +11,6 @@ namespace SymlinkShorthand
     {
         public static string? argsTarget;
         public MainWindow()
-
         {
             InitializeComponent();
 
@@ -41,7 +40,7 @@ namespace SymlinkShorthand
         {
             try
             {
-                TopLevel topLevel = TopLevel.GetTopLevel(this);
+                TopLevel? topLevel = TopLevel.GetTopLevel(this);
 
                 if (xamlTargetIsFile.IsChecked.Value)
                 {
@@ -86,7 +85,7 @@ namespace SymlinkShorthand
             {
                 if (xamlTargetIsDir.IsChecked.Value || xamlTargetIsFile.IsChecked.Value)
                 {
-                    TopLevel topLevel = TopLevel.GetTopLevel(this);
+                    TopLevel? topLevel = TopLevel.GetTopLevel(this);
 
                     IReadOnlyList<IStorageFolder> files = await topLevel.StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
                     {
@@ -101,7 +100,6 @@ namespace SymlinkShorthand
                 {
                     StatusUpdate("You should select Symbolic Link type");
                 }
-                
             }
             catch (Exception e)
             {
@@ -117,7 +115,7 @@ namespace SymlinkShorthand
                 {
                     if (xamlTargetPath.Text != "" && xamlTargetDestName.Text != "")
                     {
-                        if (!xamlTargetDestPath.Text.EndsWith('/') || !xamlTargetDestPath.Text.EndsWith('\\'))
+                        if (!xamlTargetDestPath.Text.EndsWith('/') && !xamlTargetDestPath.Text.EndsWith('\\'))
                         {
                             xamlTargetDestPath.Text += '/';
                         }
@@ -148,8 +146,9 @@ namespace SymlinkShorthand
                 {
                     StatusUpdate("Symbolic link type required");
                 }
-                
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 StatusUpdate(e.Message);
             }
         }

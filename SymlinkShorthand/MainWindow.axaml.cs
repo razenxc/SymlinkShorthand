@@ -107,6 +107,26 @@ namespace SymlinkShorthand
             }
         }
 
+        private void xamlFillDestPath_Clicked(object sender, RoutedEventArgs args)
+        {
+            if (xamlTargetPath.Text == "")
+            {
+                StatusUpdate("You should enter target path to use this");
+                return;
+            }
+
+            if (xamlTargetPath.Text.EndsWith('/') || xamlTargetPath.Text.EndsWith('\\'))
+            {
+                xamlTargetPath.Text = xamlTargetPath.Text.Remove(xamlTargetPath.Text.Length - 1);
+            }
+
+            int slash = xamlTargetPath.Text.LastIndexOf('/');
+            int backSlash = xamlTargetPath.Text.LastIndexOf('\\');
+            int finalIndex = Math.Max(slash, backSlash);
+            
+            xamlTargetDestPath.Text = xamlTargetPath.Text.Remove(finalIndex, xamlTargetPath.Text.Length - finalIndex);
+        }
+
         private void xamlLinkTargets_Clicked(object sender, RoutedEventArgs args)
         {
             try

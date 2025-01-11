@@ -15,7 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_2843962BA8DF4F83B2755C8C01EB3A7F"
+        "MsmKey" = "8:_117F2A25D015446F93BDB6AD81406044"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2CCDD06A88BA40768D32CC0A979310B0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -27,25 +33,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_4098747B795D42FA8FDD46677508F603"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_41268F9C64BA47D1BC744A3FD15EB5C0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5678F6493F9840F9A6804EC6596C6CBB"
+        "MsmKey" = "8:_88F125C217834B0099412019BF764F59"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A8700A7A458748F4BD49065C49372717"
+        "MsmKey" = "8:_B5A42C2D7E2C4E0CB4899F8565AFDFE9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -136,10 +136,30 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2843962BA8DF4F83B2755C8C01EB3A7F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_117F2A25D015446F93BDB6AD81406044"
             {
-            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\libSkiaSharp.dll"
-            "TargetName" = "8:libSkiaSharp.dll"
+            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\av_libglesv2.dll"
+            "TargetName" = "8:av_libglesv2.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2CCDD06A88BA40768D32CC0A979310B0"
+            {
+            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\SymlinkShorthand.exe"
+            "TargetName" = "8:SymlinkShorthand.exe"
             "Tag" = "8:"
             "Folder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
             "Condition" = "8:"
@@ -176,26 +196,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4098747B795D42FA8FDD46677508F603"
-            {
-            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\SymlinkShorthand.exe"
-            "TargetName" = "8:SymlinkShorthand.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_41268F9C64BA47D1BC744A3FD15EB5C0"
             {
             "SourcePath" = "8:C:\\Users\\Alexey\\Downloads\\Rectangle 2.jpg"
@@ -216,10 +216,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5678F6493F9840F9A6804EC6596C6CBB"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_88F125C217834B0099412019BF764F59"
             {
-            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\libHarfBuzzSharp.dll"
-            "TargetName" = "8:libHarfBuzzSharp.dll"
+            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\libSkiaSharp.dll"
+            "TargetName" = "8:libSkiaSharp.dll"
             "Tag" = "8:"
             "Folder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
             "Condition" = "8:"
@@ -236,10 +236,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A8700A7A458748F4BD49065C49372717"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B5A42C2D7E2C4E0CB4899F8565AFDFE9"
             {
-            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\av_libglesv2.dll"
-            "TargetName" = "8:av_libglesv2.dll"
+            "SourcePath" = "8:..\\SymlinkShorthand\\bin\\publish\\Release\\net8.0\\windows64\\libHarfBuzzSharp.dll"
+            "TargetName" = "8:libHarfBuzzSharp.dll"
             "Tag" = "8:"
             "Folder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
             "Condition" = "8:"
@@ -324,15 +324,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Symlink Shorthand"
-        "ProductCode" = "8:{EFB1FE9E-2236-45A9-BB07-4995BFB0A493}"
-        "PackageCode" = "8:{B21323AD-87BB-4331-B060-0E8ECC3BFF48}"
+        "ProductCode" = "8:{E684DC0A-0C0F-47D8-B199-8DEF518961F2}"
+        "PackageCode" = "8:{DE0BD680-A749-451B-862C-950985B9E9EA}"
         "UpgradeCode" = "8:{C2727E92-AFEF-44BB-95AB-57D5DB0CA7AA}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.1.0"
+        "ProductVersion" = "8:1.2.0"
         "Manufacturer" = "8: "
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -613,7 +613,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_4098747B795D42FA8FDD46677508F603"
+            "Target" = "8:_2CCDD06A88BA40768D32CC0A979310B0"
             "Folder" = "8:_C13446D80D404F56B41AC583853A51E1"
             "WorkingFolder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
             "Icon" = "8:_367D9B3931F4493E951EC5584456322C"
@@ -627,7 +627,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_4098747B795D42FA8FDD46677508F603"
+            "Target" = "8:_2CCDD06A88BA40768D32CC0A979310B0"
             "Folder" = "8:_F6D45F8E8EB9461AAF0223012A0B52C6"
             "WorkingFolder" = "8:_1EA25D2F3DCD4B5680E42AEF8E631BD4"
             "Icon" = "8:_367D9B3931F4493E951EC5584456322C"

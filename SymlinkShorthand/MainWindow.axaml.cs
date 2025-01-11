@@ -124,48 +124,54 @@ namespace SymlinkShorthand
             int backSlash = xamlTargetPath.Text.LastIndexOf('\\');
             int finalIndex = Math.Max(slash, backSlash);
             
-            xamlTargetDestPath.Text = xamlTargetPath.Text.Remove(finalIndex, xamlTargetPath.Text.Length - finalIndex);
+            try
+            {
+                xamlTargetDestPath.Text = xamlTargetPath.Text.Remove(finalIndex, xamlTargetPath.Text.Length - finalIndex);
+            } 
+            catch (Exception e)
+            {
+                StatusUpdate(e.Message);
+            }
         }
 
         private void xamlLinkTargets_Clicked(object sender, RoutedEventArgs args)
         {
             try
             {
-                if (xamlTargetIsDir.IsChecked.Value || xamlTargetIsFile.IsChecked.Value)
+                if (!(xamlTargetIsDir.IsChecked.Value || xamlTargetIsFile.IsChecked.Value))
                 {
-                    if (xamlTargetPath.Text != "" && xamlTargetDestName.Text != "")
-                    {
-                        if (!xamlTargetDestPath.Text.EndsWith('/') && !xamlTargetDestPath.Text.EndsWith('\\'))
-                        {
-                            xamlTargetDestPath.Text += '/';
-                        }
+                    StatusUpdate("Symbolic link type required");
+                    return;
+                }
 
-                        if (Directory.Exists(xamlTargetPath.Text))
-                        {
-                            Directory.CreateSymbolicLink(xamlTargetDestPath.Text + xamlTargetDestName.Text, xamlTargetPath.Text);
-                            StatusUpdate("Symlink successfully created");
-                        }
-                        else if (File.Exists(xamlTargetPath.Text))
-                        {
-                            File.CreateSymbolicLink(xamlTargetDestPath.Text + xamlTargetDestName.Text, xamlTargetPath.Text);
-                            StatusUpdate("Symlink successfully created");
-                        }
-                        else
-                        {
-                            StatusUpdate("Target path does not exist");
-                        }
-                        xamlTargetIsDir.IsEnabled = true;
-                        xamlTargetIsFile.IsEnabled = true;
-                    }
-                    else
-                    {
-                        StatusUpdate("The destination name is required");
-                    }
+                if (xamlTargetPath.Text == "" && xamlTargetDestName.Text == "")
+                {
+                    StatusUpdate("The destination name is required");
+                    return;
+                }
+
+                if (!xamlTargetDestPath.Text.EndsWith('/') && !xamlTargetDestPath.Text.EndsWith('\\'))
+                {
+                    xamlTargetDestPath.Text += '/';
+                }
+
+                if (Directory.Exists(xamlTargetPath.Text))
+                {
+                    Directory.CreateSymbolicLink(xamlTargetDestPath.Text + xamlTargetDestName.Text, xamlTargetPath.Text);
+                    StatusUpdate("Symlink successfully created");
+                }
+                else if (File.Exists(xamlTargetPath.Text))
+                {
+                    File.CreateSymbolicLink(xamlTargetDestPath.Text + xamlTargetDestName.Text, xamlTargetPath.Text);
+                    StatusUpdate("Symlink successfully created");
                 }
                 else
                 {
-                    StatusUpdate("Symbolic link type required");
+                    StatusUpdate("Target path does not exist");
+                    return;
                 }
+                xamlTargetIsDir.IsEnabled = true;
+                xamlTargetIsFile.IsEnabled = true;
             }
             catch (Exception e)
             {

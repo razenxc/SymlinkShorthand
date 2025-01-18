@@ -19,8 +19,8 @@
 				   Content="Symbolic Link type"/>
 			<DockPanel>
 				<RadioButton Margin="0 0 50 0"
-					x:Name="xamlTargetIsDir" GroupName="Target Type" Content="Dir"/>
-				<RadioButton x:Name="xamlTargetIsFile" GroupName="Target Type" Content="File"/>
+					x:Name="TargetIsDir" GroupName="Target Type" Content="Dir"/>
+				<RadioButton x:Name="TargetIsFile" GroupName="Target Type" Content="File"/>
 			</DockPanel>
 
 			<Label Margin="0 0 0 5" Content="Target Path"/>
@@ -32,9 +32,9 @@
 				</Grid.ColumnDefinitions>
 				
 				<TextBox Grid.Column="0"
-					Watermark="F:/DriveData/Minecraft/saves" Text="" x:Name="xamlTargetPath"/>
+					Watermark="F:/DriveData/Minecraft/saves" Text="" x:Name="TargetPath"/>
 				<Button Grid.Column="1" Margin="4 0 0 0"
-						Click="xamlPickTargetPath_Clicked" Content="Select"/>
+						Click="PickTargetPath_Clicked" Content="Select"/>
 			</Grid>
 
 
@@ -53,13 +53,13 @@
 				</Grid.ColumnDefinitions>
 
 				<TextBox Grid.Column="0"
-						 Watermark="C:/Users/Admin/AppData/Roaming/.minecraft" Text="" x:Name="xamlTargetDestPath"/>
+						 Watermark="C:/Users/Admin/AppData/Roaming/.minecraft" Text="" x:Name="TargetDestPath"/>
 				<Button Grid.Column="1" Margin="5 0 0 0"
-						Click="xamlFillDestPath_Clicked" Content="Fill"/>
+						Click="FillDestPath_Clicked" Content="Fill"/>
 				<TextBox Grid.Column="2" Margin="5 0 0 0"
-						 Watermark="saves" Text="" x:Name="xamlTargetDestName"/>
+						 Watermark="saves" Text="" x:Name="TargetDestName"/>
 				<Button Grid.Column="3" Margin="5 0 0 0"
-						Click="xamlPickDestPath_Clicked" Content="Select"/>
+						Click="PickDestPath_Clicked" Content="Select"/>
 			</Grid>
 
 			<Grid Margin="0 20 0 0">
@@ -70,16 +70,16 @@
 				
 				<Button Grid.Column="0" 
 						HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center"
-						Content="Link" Click="xamlLinkTargets_Clicked"
+						Content="Link" Click="LinkTargets_Clicked"
 						/>
 				<Button Grid.Column="1" Margin="5 0 0 0"
 						HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center"
-						Content=" Clear " Click="xamlClearAll_Clicked"
+						Content=" Clear " Click="ClearAll_Clicked"
 						/>
 			</Grid>
 
 			<StackPanel Margin="0 6">
-				<TextBlock x:Name="xamlStatus"/>
+				<TextBlock x:Name="Status"/>
 			</StackPanel>
 
 		</StackPanel>

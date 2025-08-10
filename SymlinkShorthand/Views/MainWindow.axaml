@@ -1,0 +1,96 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SymlinkShorthand.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+		d:DesignWidth="630" d:DesignHeight="300"
+		Width="630" Height="300"
+		MinWidth="630" MinHeight="300"
+		MaxHeight="300"
+		WindowStartupLocation="CenterScreen"
+        x:Class="SymlinkShorthand.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/icon.ico"
+        Title="SymlinkShorthand">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<Panel Margin="20">
+		<StackPanel>
+
+			<Label Margin="0 0 0 5"
+				   Content="Symbolic Link type"/>
+			<DockPanel>
+				<RadioButton Margin="0 0 50 0"
+					IsEnabled="{Binding TargetIsDirEnabled}" IsChecked="{Binding TargetIsDirChecked}" GroupName="Target Type" Content="Dir"/>
+				<RadioButton IsEnabled="{Binding TargetIsFileEnabled}" IsChecked="{Binding TargetIsFileChecked}" GroupName="Target Type" Content="File"/>
+			</DockPanel>
+
+			<Label Margin="0 0 0 5" Content="Target Path"/>
+
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+
+				<TextBox Grid.Column="0"
+					Watermark="F:/DriveData/Minecraft/saves" Text="{Binding TargetPath}"/>
+				<Button Grid.Column="1" Margin="4 0 0 0"
+						Command="{Binding PickTargetPath}" Content="Select"/>
+			</Grid>
+
+
+			<DockPanel Margin="0 10 0 5">
+				<Label Content="Target Destination"/>
+				<Label HorizontalAlignment="Right" Margin="0 0 0 0"
+					   Content="Destination Name"/>
+			</DockPanel>
+
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="0.6*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+
+				<TextBox Grid.Column="0"
+						 Watermark="C:/Users/Admin/AppData/Roaming/.minecraft" Text="{Binding TargetDestPath}"/>
+				<Button Grid.Column="1" Margin="5 0 0 0"
+						Command="{Binding FillDestPath}" Content="Fill"/>
+				<TextBox Grid.Column="2" Margin="5 0 0 0"
+						 Watermark="saves" Text="{Binding TargetDestName}"/>
+				<Button Grid.Column="3" Margin="5 0 0 0"
+						Command="{Binding PickDestPath}" Content="Select"/>
+			</Grid>
+
+			<Grid Margin="0 20 0 0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+
+				<Button Grid.Column="0"
+						HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center"
+						Content="Link" Command="{Binding LinkTargets}"
+						/>
+				<Button Grid.Column="1" Margin="5 0 0 0"
+						HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center"
+						Content=" Clear " Command="{Binding ClearAll}"
+						/>
+			</Grid>
+
+			<StackPanel Margin="0 6">
+				<TextBlock Text="{Binding Status}"/>
+			</StackPanel>
+
+		</StackPanel>
+	</Panel>
+
+</Window>

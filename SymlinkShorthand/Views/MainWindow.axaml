@@ -1,17 +1,25 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SymlinkShorthand.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" 
+        mc:Ignorable="d"
 		d:DesignWidth="630" d:DesignHeight="300"
 		Width="630" Height="300"
 		MinWidth="630" MinHeight="300"
 		MaxHeight="300"
 		WindowStartupLocation="CenterScreen"
-        x:Class="SymlinkShorthand.MainWindow"
-		Icon="/Assets/icon.ico"
+        x:Class="SymlinkShorthand.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/icon.ico"
         Title="SymlinkShorthand">
-	
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
 	<Panel Margin="20">
 		<StackPanel>
 
@@ -19,22 +27,22 @@
 				   Content="Symbolic Link type"/>
 			<DockPanel>
 				<RadioButton Margin="0 0 50 0"
-					x:Name="xamlTargetIsDir" GroupName="Target Type" Content="Dir"/>
-				<RadioButton x:Name="xamlTargetIsFile" GroupName="Target Type" Content="File"/>
+					IsEnabled="{Binding TargetIsDirEnabled}" IsChecked="{Binding TargetIsDirChecked}" GroupName="Target Type" Content="Dir"/>
+				<RadioButton IsEnabled="{Binding TargetIsFileEnabled}" IsChecked="{Binding TargetIsFileChecked}" GroupName="Target Type" Content="File"/>
 			</DockPanel>
 
 			<Label Margin="0 0 0 5" Content="Target Path"/>
-			
+
 			<Grid>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="*"/>
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
-				
+
 				<TextBox Grid.Column="0"
-					Watermark="F:/DriveData/Minecraft/saves" Text="" x:Name="xamlTargetPath"/>
+					Watermark="F:/DriveData/Minecraft/saves" Text="{Binding TargetPath}"/>
 				<Button Grid.Column="1" Margin="4 0 0 0"
-						Click="xamlPickTargetPath_Clicked" Content="Select"/>
+						Command="{Binding PickTargetPath}" Content="Select"/>
 			</Grid>
 
 
@@ -53,13 +61,13 @@
 				</Grid.ColumnDefinitions>
 
 				<TextBox Grid.Column="0"
-						 Watermark="C:/Users/Admin/AppData/Roaming/.minecraft" Text="" x:Name="xamlTargetDestPath"/>
+						 Watermark="C:/Users/Admin/AppData/Roaming/.minecraft" Text="{Binding TargetDestPath}"/>
 				<Button Grid.Column="1" Margin="5 0 0 0"
-						Click="xamlFillDestPath_Clicked" Content="Fill"/>
+						Command="{Binding FillDestPath}" Content="Fill"/>
 				<TextBox Grid.Column="2" Margin="5 0 0 0"
-						 Watermark="saves" Text="" x:Name="xamlTargetDestName"/>
+						 Watermark="saves" Text="{Binding TargetDestName}"/>
 				<Button Grid.Column="3" Margin="5 0 0 0"
-						Click="xamlPickDestPath_Clicked" Content="Select"/>
+						Command="{Binding PickDestPath}" Content="Select"/>
 			</Grid>
 
 			<Grid Margin="0 20 0 0">
@@ -67,21 +75,22 @@
 					<ColumnDefinition Width="*"/>
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
-				
-				<Button Grid.Column="0" 
+
+				<Button Grid.Column="0"
 						HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center"
-						Content="Link" Click="xamlLinkTargets_Clicked"
+						Content="Link" Command="{Binding LinkTargets}"
 						/>
 				<Button Grid.Column="1" Margin="5 0 0 0"
 						HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalContentAlignment="Center"
-						Content=" Clear " Click="xamlClearAll_Clicked"
+						Content=" Clear " Command="{Binding ClearAll}"
 						/>
 			</Grid>
 
 			<StackPanel Margin="0 6">
-				<TextBlock x:Name="xamlStatus"/>
+				<TextBlock Text="{Binding Status}"/>
 			</StackPanel>
 
 		</StackPanel>
 	</Panel>
+
 </Window>

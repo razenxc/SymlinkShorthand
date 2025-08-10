@@ -3,7 +3,7 @@ using Avalonia;
 
 namespace SymlinkShorthand
 {
-    internal class Program
+    internal sealed class Program
     {
         // Initialization code. Don't use any Avalonia, third-party APIs or any
         // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
@@ -16,7 +16,7 @@ namespace SymlinkShorthand
             // Args handling
             if (args.Length > 0)
             {
-                SymlinkShorthand.MainWindow.argsTarget = args[0];
+                SymlinkShorthand.ViewModels.MainWindowViewModel.ArgsTarget = args[0];
             }
 
             app.StartWithClassicDesktopLifetime(args);
